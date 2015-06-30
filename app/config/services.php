@@ -15,6 +15,7 @@ $di->set('view', function() use ($config) {
     $view->setViewsDir($config->application->viewsDir);
     return $view;
 });
+
 /**
  * The URL component is used to generate all kind of urls in the application
  */
