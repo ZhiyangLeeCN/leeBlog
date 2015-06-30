@@ -4,11 +4,17 @@
  * Date: 2015/6/30
  * Time: 15:48
  */
-
+use Phalcon\Mvc\View;
 use Phalcon\Mvc\Url as UrlProvider;
 use Phalcon\Session\Adapter\Files as Session;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 
+// Setup the view component
+$di->set('view', function() use ($config) {
+    $view = new View();
+    $view->setViewsDir($config->application->viewsDir);
+    return $view;
+});
 /**
  * The URL component is used to generate all kind of urls in the application
  */
